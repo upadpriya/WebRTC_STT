@@ -1,0 +1,68 @@
+<!--index.html-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Realtime communication with WebRTC</title>
+  <style>
+    body {
+      font-family: monospace;
+      font-size: 22px;
+    }
+    #messages { list-style-type: none; margin: 0; padding: 0; }
+    #messages li { padding: 5px 10px; }
+    #messages li:nth-child(odd) { background: #eee; }
+  </style>
+  <link rel="stylesheet" href="/css/main.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+</head>
+
+<body>
+
+  <h1>Realtime communication with WebRTC</h1>
+  
+  <div id="videos">
+    <video id="localVideo" autoplay muted></video>
+    <video id="remoteVideo" autoplay></video>
+  </div>
+
+  
+
+<iframe name="myframe" width = "0" height = "0" border = "0"></iframe>
+
+  <form id = "lang" action="/" method="POST" target="myframe">
+    <lable>From:</lable>
+    <input id = "mytext" type="text" name="mytext" required />
+    <label>To:</label>
+    <input id = "mytext2" type="text" name="mytext2" required />
+    <input id = "button" type="submit" value="Submit" />
+</form>
+
+
+
+
+<label>Received:</label>
+<textarea id = "receiveText"></textarea>
+<label>Send:</label>
+<textarea id = "inputText"></textarea>
+<button id = "sendData">Send</button>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+  <script src="js/main.js"></script>
+
+
+ <!-- <script>
+    $(function () {
+      var socket = io();
+      socket.on('chat message', function(msg){
+        $('#messages').append($('<li>').text(msg));
+      });
+    });
+  </script>
+</body>-->
+
+</html>
